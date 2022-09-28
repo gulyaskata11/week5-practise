@@ -1,0 +1,9 @@
+#root {
+  color: blue;
+}
+#root .january {
+  color: green;
+}
+#root .january .day {
+  color: gray;
+}/*# sourceMappingURL=style.css.map */
