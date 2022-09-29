@@ -24,12 +24,12 @@ console.log("Hello")
 
 const rootElement = document.querySelector("#root")
 
-// rootElement.insertAdjacentHTML("beforeend", "<button>Show Calendar</button>")
-// const buttonElement = rootElement.querySelector("button")
-// buttonElement.addEventListener("click", function() {
+rootElement.insertAdjacentHTML("beforeend", "<button>Show Calendar</button>")
+const buttonElement = rootElement.querySelector("button")
+buttonElement.addEventListener("click", function() {
 //     rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "january", 31))
 //     rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "february", 28))
-// })
+ })
 
 rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "january", 31))
 rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "february", 28))
