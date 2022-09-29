@@ -82,10 +82,10 @@ const monthComponent = function (nth, name, days) {
     }
 
     return `
-    <div id="${nth}" class="${name}">
+    <section id="${nth}" class="${name}">
         <h2>${name}</h2>
-        ${daysHtml}
-    </div>
+       <div class="days"> ${daysHtml}</div>
+    </section>
     `
 };
 
@@ -105,15 +105,20 @@ const rootElement = document.querySelector("#root")
 rootElement.insertAdjacentHTML("beforeend", "<button>Show Calendar</button>")
 const buttonElement = rootElement.querySelector("button")
 
-let monthIndex = 0;
+//let monthIndex = 0;
 
 buttonElement.addEventListener("click", function() {
-    if (monthIndex < 12) {
+    // if (monthIndex < 12) {
+    //     rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
+    //     monthIndex++
+    // } else {
+    //     buttonElement.setAttribute("disabled", "")
+    // }
+
+    for (let monthIndex = 0; monthIndex < 12; monthIndex++) {
         rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
-        monthIndex++
-    } else {
-        buttonElement.setAttribute("disabled", "")
     }
+
  })
 
 // rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "january", 31))
