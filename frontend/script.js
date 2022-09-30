@@ -85,6 +85,7 @@ const monthComponent = function (nth, name, days) {
     <section id="${nth}" class="${name}">
         <h2>${name}</h2>
        <div class="days"> ${daysHtml}</div>
+       <div class="selected-day"></div>
     </section>
     `
 };
@@ -119,9 +120,52 @@ buttonElement.addEventListener("click", function() {
         rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
     }
 
+   // initJanuaryEvents()
+
+   const dayElements = document.querySelectorAll(".day")
+//     dayElements.forEach(function (element) {
+//         element.addEventListener("click", function (event) {
+//             console.log(event)
+//             event.target.classList.toggle("clicked")
+//             element.classList.toggle("clicked")
+//         })
+//    });
+
+        for (let i = 0; i < dayElements.length; i++) {
+            dayElements[i].addEventListener("click", function() {
+                dayElements[i].classList.toggle("clicked") 
+            })
+        }
+
  })
 
 // rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "january", 31))
 // rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "february", 28))
 
 // rootElement.style.color = "blue"  STYLE CSAK CSS-BEN!!!
+
+const hideDays = function (days) {
+    for (let day of days) {
+        day.classList.add("hidden")
+
+    }
+}
+
+const showDayInfo = function (dayIndex) {
+    let selectedDay = document.querySelector(".January .selected-day")
+    selectedDay.textContent = `January ${dayIndex}`
+}
+
+// const initJanuaryEvents = function () {
+//     let days = document.querySelectorAll(".January .days .day")
+//     for (let day of days) {
+//         day.addEventListener("click", function () {
+//             hideDays(days)
+//             showDayInfo(day.textContent)
+//         })
+//     }
+
+// }
+
+
+
